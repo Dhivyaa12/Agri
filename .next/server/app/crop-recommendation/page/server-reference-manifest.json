@@ -1,0 +1,38 @@
+{
+  "node": {
+    "402578704a0068c0448430b72144adf3acc23f7769": {
+      "workers": {
+        "app/crop-recommendation/page": {
+          "moduleId": "[project]/.next-internal/server/app/crop-recommendation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/translate-text.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/ai/flows/crop-recommendation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/ai/flows/text-to-speech.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/crop-recommendation/page": "action-browser"
+      }
+    },
+    "40e555da5c9d18197e46e320d0c55fee566dd3a360": {
+      "workers": {
+        "app/crop-recommendation/page": {
+          "moduleId": "[project]/.next-internal/server/app/crop-recommendation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/translate-text.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/ai/flows/crop-recommendation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/ai/flows/text-to-speech.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/crop-recommendation/page": "action-browser"
+      }
+    },
+    "40e37f7155e0bdf442d0c48b77ee9f28f61a70f186": {
+      "workers": {
+        "app/crop-recommendation/page": {
+          "moduleId": "[project]/.next-internal/server/app/crop-recommendation/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/translate-text.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/ai/flows/crop-recommendation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/ai/flows/text-to-speech.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/crop-recommendation/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}

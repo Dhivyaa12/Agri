@@ -1,0 +1,38 @@
+{
+  "node": {
+    "402578704a0068c0448430b72144adf3acc23f7769": {
+      "workers": {
+        "app/government-schemes/page": {
+          "moduleId": "[project]/.next-internal/server/app/government-schemes/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/translate-text.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/ai/flows/government-scheme-recommendation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/ai/flows/speech-to-text.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/government-schemes/page": "action-browser"
+      }
+    },
+    "403e3f83ec63b15020e5d99d349365356a72cf486d": {
+      "workers": {
+        "app/government-schemes/page": {
+          "moduleId": "[project]/.next-internal/server/app/government-schemes/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/translate-text.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/ai/flows/government-scheme-recommendation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/ai/flows/speech-to-text.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/government-schemes/page": "action-browser"
+      }
+    },
+    "4032f1b03923a55598788ff50d25ed88cf179615f1": {
+      "workers": {
+        "app/government-schemes/page": {
+          "moduleId": "[project]/.next-internal/server/app/government-schemes/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/ai/flows/translate-text.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/ai/flows/government-scheme-recommendation.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/src/ai/flows/speech-to-text.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/government-schemes/page": "action-browser"
+      }
+    }
+  },
+  "edge": {}
+}
