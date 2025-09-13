@@ -1,4 +1,3 @@
-
 'use client';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -36,8 +35,6 @@ import { Separator } from '@/components/ui/separator';
 import { LanguageProvider } from '@/hooks/use-language';
 import { useTranslation } from '@/hooks/use-translation';
 import { usePathname } from 'next/navigation';
-import { UserProvider } from '@/hooks/use-user';
-import { useEffect, useState } from 'react';
 
 
 const texts = {
@@ -55,21 +52,8 @@ const texts = {
 function AppLayout({ children }: { children: React.ReactNode }) {
   const { t } = useTranslation(texts);
   const pathname = usePathname();
-  const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  const noSidebarRoutes = ['/welcome', '/', '/login'];
-  const showSidebar = !noSidebarRoutes.includes(pathname);
-
-  if (!isClient) {
-    // Render nothing on the server to avoid hydration mismatch
-    return null;
-  }
-
-  if (!showSidebar) {
+  if (pathname === '/welcome' || pathname === '/') {
     return (
        <div className="animate-fade-in">
         {children}
@@ -195,12 +179,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -219,13 +197,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
-            <UserProvider>
-              <AppLayout>
-                {children}
-              </AppLayout>
-            </UserProvider>
+            <AppLayout>
+              {children}
+            </AppLayout>
           </LanguageProvider>
-          {isClient && <Toaster />}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
