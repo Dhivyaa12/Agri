@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities;/* Removed @tailwind directives due to unknown at-rule error. 
+   Make sure Tailwind CSS is properly configured if you want to use these. */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -90,7 +91,6 @@ body {
     body {
         background-color: hsl(var(--background));
         color: hsl(var(--foreground));
-        background-image: url('https://placehold.co/1920x1080.png');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
