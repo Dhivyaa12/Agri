@@ -1,6 +1,7 @@
 
 'use server';
 
+// Authentication flows for user login and signup
 import {ai} from '@/ai/genkit';
 import {z} from 'genkit';
 import * as fs from 'fs/promises';
