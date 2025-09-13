@@ -189,6 +189,7 @@ export default function RootLayout({
         <title>AgriVision</title>
         <meta name="description" content="An AI-Powered Agricultural Assistant to help farmers." />
       </head>
+      <link rel="icon" href="/favicon.ico" />
       <body className={cn('font-body antialiased')}>
         <ThemeProvider
           attribute="class"

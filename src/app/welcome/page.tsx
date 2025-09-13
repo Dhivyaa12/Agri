@@ -47,23 +47,23 @@ export default function WelcomePage() {
             "relative flex h-screen w-screen items-center justify-center overflow-hidden"
           )}
         >
-          {/* 🌾 Background Video Only */}
+          {/* 🌾 Background Video */}
           <video
-  autoPlay
-  loop
-  muted
-  playsInline
-  className="absolute top-0 left-0 min-h-full min-w-full object-cover z-0"
->
-  <source src="/videos/Agrivision.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-0 left-0 min-h-full min-w-full object-cover z-0"
+            data-ai-hint="dawn landscape nature"
+          >
+            <source src="/videos/Agrivision.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
           {/* Dark Overlay */}
           <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
 
-          {/* Grid-based content */}
+          {/* Content */}
           <div className="relative z-20 grid gap-6 p-4 text-center text-white animate-fade-in-up">
             <motion.h1
               className="text-5xl md:text-7xl font-bold font-headline drop-shadow-lg"
