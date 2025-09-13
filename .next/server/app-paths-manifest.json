@@ -1,8 +1,0 @@
-{
-  "/crop-diagnosis/page": "app/crop-diagnosis/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/market-watch/page": "app/market-watch/page.js",
-  "/page": "app/page.js",
-  "/sensor-analysis/page": "app/sensor-analysis/page.js",
-  "/welcome/page": "app/welcome/page.js"
-}
