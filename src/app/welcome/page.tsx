@@ -1,18 +1,17 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
-import { ArrowRight, UserPlus } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/hooks/use-translation';
 import { cn } from '@/lib/utils';
 import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const texts = {
   welcome: "Welcome to AgriVision",
   tagline: "Your AI-powered assistant for smarter farming.",
-  startButton: "Get Started",
-  signupButton: "Sign Up"
+  startButton: "Get Started"
 };
 
 export default function WelcomePage() {
@@ -25,48 +24,82 @@ export default function WelcomePage() {
     setIsClient(true);
   }, []);
 
-  const handleNavigate = (path: string, query?: any) => {
+  const handleStart = () => {
     setIsExiting(true);
     setTimeout(() => {
-      router.push(path + (query ? `?${new URLSearchParams(query)}` : ''));
-    }, 500); // Match the duration of the fade-out animation
+      router.push('/dashboard');
+    }, 700); // match animation duration
   };
 
   if (!isClient) {
-    return null; // Don't render anything on the server to prevent hydration mismatch
+    return null; // prevent hydration issues
   }
 
   return (
-    <div className={cn(
-        "relative flex h-screen w-screen items-center justify-center overflow-hidden transition-opacity duration-500",
-        isExiting ? 'opacity-0' : 'opacity-100'
-    )}>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 min-h-full min-w-full object-cover z-0"
-        data-ai-hint="dawn landscape nature"
-      >
-        <source src="/videos/Agrivision.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
-      <div className="z-20 text-center text-white p-4 animate-fade-in-up">
-        <h1 className="text-5xl md:text-7xl font-bold font-headline drop-shadow-lg">{t('welcome')}</h1>
-        <p className="mt-4 text-lg md:text-xl text-white/90 drop-shadow-md">{t('tagline')}</p>
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button onClick={() => handleNavigate('/login')} size="lg">
+    <AnimatePresence>
+      {!isExiting && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.7 }}
+          className={cn(
+            "relative flex h-screen w-screen items-center justify-center overflow-hidden"
+          )}
+        >
+          {/* 🌾 Background Video Only */}
+          <video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute top-0 left-0 min-h-full min-w-full object-cover z-0"
+>
+  <source src="/videos/Agrivision.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+
+          {/* Dark Overlay */}
+          <div className="absolute top-0 left-0 w-full h-full bg-black/50 z-10"></div>
+
+          {/* Grid-based content */}
+          <div className="relative z-20 grid gap-6 p-4 text-center text-white animate-fade-in-up">
+            <motion.h1
+              className="text-5xl md:text-7xl font-bold font-headline drop-shadow-lg"
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+            >
+              {t('welcome')}
+            </motion.h1>
+
+            <motion.p
+              className="mt-2 text-lg md:text-xl text-white/90 drop-shadow-md max-w-2xl mx-auto"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+            >
+              {t('tagline')}
+            </motion.p>
+
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.7, delay: 0.6 }}
+            >
+              <Button
+                onClick={handleStart}
+                size="lg"
+                className="mt-6 px-6 py-3 text-lg rounded-2xl shadow-lg transition-all hover:scale-105 hover:shadow-2xl"
+              >
                 {t('startButton')}
                 <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-             <Button onClick={() => handleNavigate('/login', { tab: 'signup' })} size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black">
-                {t('signupButton')}
-                <UserPlus className="ml-2 h-5 w-5" />
-            </Button>
-        </div>
-      </div>
-    </div>
+              </Button>
+            </motion.div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
