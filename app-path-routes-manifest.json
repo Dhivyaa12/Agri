@@ -1,0 +1,14 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/government-schemes/page": "/government-schemes",
+  "/crop-diagnosis/page": "/crop-diagnosis",
+  "/crop-recommendation/page": "/crop-recommendation",
+  "/page": "/",
+  "/dashboard/page": "/dashboard",
+  "/market-watch/page": "/market-watch",
+  "/market-analyser/page": "/market-analyser",
+  "/profile/page": "/profile",
+  "/settings/page": "/settings",
+  "/welcome/page": "/welcome",
+  "/sensor-analysis/page": "/sensor-analysis"
+}
