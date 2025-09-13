@@ -7,7 +7,8 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useUser } from '@/hooks/use-user';
-import { loginUser, signupUser } from '@/ai/flows/auth';
+// Update the import path to the correct relative location of auth.ts
+import { loginUser, signupUser } from '../../ai/flows/auth';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -206,4 +207,3 @@ export default function LoginPage() {
         </div>
     );
 }
-
